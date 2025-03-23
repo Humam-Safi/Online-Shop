@@ -1,0 +1,13 @@
+.btn{
+    background-color: white;
+    outline: none;
+    border: 0;
+    padding: 20px 30px;
+    border-radius: 6px;
+}
+.btn-primery{
+    background-color: rgb(9, 91, 9);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
