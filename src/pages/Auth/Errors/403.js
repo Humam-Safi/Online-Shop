@@ -10,7 +10,7 @@ const Err403 = ({ role }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(135deg, #fff5f7 0%, #fff 100%)"
+        background: "linear-gradient(135deg, #f8f9fa 0%, #fff 100%)"
       }}
     >
       <div 
@@ -20,7 +20,7 @@ const Err403 = ({ role }) => {
           padding: "2rem",
           borderRadius: "20px",
           background: "white",
-          boxShadow: "0 10px 30px rgba(255, 0, 90, 0.1)",
+          boxShadow: "0 10px 30px rgba(0, 123, 255, 0.1)",
           maxWidth: "600px",
           width: "90%"
         }}
@@ -34,8 +34,8 @@ const Err403 = ({ role }) => {
           <FaLock 
             className="lock-icon"
             style={{
+              color: "#001f3f",
               fontSize: "4rem",
-              background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent"
             }}
@@ -48,7 +48,7 @@ const Err403 = ({ role }) => {
             fontSize: "6rem",
             fontWeight: "bold",
             margin: "0",
-            background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+            background: "linear-gradient(45deg, #001f3f, #003366)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent"
           }}
@@ -61,7 +61,7 @@ const Err403 = ({ role }) => {
           style={{
             fontSize: "2rem",
             fontWeight: "600",
-            color: "#2c3e50",
+            color: "#343a40",
             marginBottom: "1rem"
           }}
         >
@@ -72,7 +72,7 @@ const Err403 = ({ role }) => {
           className="error-message"
           style={{
             fontSize: "1.2rem",
-            color: "#666",
+            color: "#495057",
             marginBottom: "1rem"
           }}
         >
@@ -82,7 +82,7 @@ const Err403 = ({ role }) => {
         <div 
           className="error-details"
           style={{
-            color: "#888",
+            color: "#6c757d",
             marginBottom: "2rem",
             lineHeight: "1.6"
           }}
@@ -109,7 +109,7 @@ const Err403 = ({ role }) => {
             <div 
               className="shield-inner"
               style={{
-                background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+                background: "linear-gradient(45deg, #001f3f, #003366)",
                 borderRadius: "50%",
                 width: "100%",
                 height: "100%",
@@ -139,22 +139,22 @@ const Err403 = ({ role }) => {
             display: "inline-flex",
             alignItems: "center",
             gap: "0.5rem",
-            background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+            background: "linear-gradient(45deg, #001f3f, #003366)",
             color: "white",
             padding: "0.8rem 2rem",
             borderRadius: "50px",
             textDecoration: "none",
             fontWeight: "500",
             transition: "all 0.3s ease",
-            boxShadow: "0 5px 15px rgba(255, 0, 90, 0.3)"
+            boxShadow: "0 5px 15px rgba(0, 123, 255, 0.3)"
           }}
           onMouseOver={(e) => {
             e.currentTarget.style.transform = "translateY(-2px)";
-            e.currentTarget.style.boxShadow = "0 8px 20px rgba(255, 0, 90, 0.4)";
+            e.currentTarget.style.boxShadow = "0 8px 20px rgba(0, 123, 255, 0.4)";
           }}
           onMouseOut={(e) => {
             e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow = "0 5px 15px rgba(255, 0, 90, 0.3)";
+            e.currentTarget.style.boxShadow = "0 5px 15px rgba(0, 123, 255, 0.3)";
           }}
         >
           <FaHome className="home-icon" />

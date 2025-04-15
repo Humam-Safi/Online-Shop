@@ -1,87 +1,106 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const Banner = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  
   const slides = [
     {
-      title: "Wood & Cloth Sofa",
-      description: "Experience the perfect blend of comfort and style with our handcrafted wood and cloth sofa. Made with premium materials and expert craftsmanship for lasting quality.",
-      image: require("../../Assets/Images/71VLkZYkqPL._AC_SL1500_.jpg"),
-      alt: "Wood and Cloth Sofa"
+      image: require("../../Assets/Images/black-background-product-photography-mini (1).jpg"),
     },
     {
-      title: "Modern Dining Set", 
-      description: "Elegant dining furniture perfect for your home. Premium quality materials and craftsmanship.",
-      image: require("../../Assets/Images/71h7YwbxxIL._AC_SL1500_.jpg"), // Replace with actual image
-      alt: "Modern Dining Set"
+      image: require("../../Assets/Images/black-background-product-photography-mini (1).jpg"),
     },
     {
-      title: "Luxury Bedroom Collection",
-      description: "Transform your bedroom with our luxury collection. Comfort meets style.",
-      image: require("../../Assets/Images/bed.jpg"), // Replace with actual image
-      alt: "Luxury Bedroom Collection" 
-    }
+      image: require("../../Assets/Images/black-background-product-photography-mini (1).jpg"),
+    },
+    {
+      image: require("../../Assets/Images/black-background-product-photography-mini (1).jpg"),
+    },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+  };
 
   return (
-    <div className="py-5 banner d-none d-md-block">
-      <div className="d-flex flex-column flex-md-row justify-content-between" style={{
-        transition: "all 0.5s ease-in-out"
-      }}>
-        <div className="text col-12 col-md-6 pe-md-4" style={{
-          opacity: 1,
-          animation: "fadeIn 0.5s ease-in"
-        }}>
-          <h1 className="responsive-heading" style={{
-            fontSize: "calc(1.5rem + 2vw)",
-            marginBottom: "1rem"
-          }}>{slides[currentSlide].title}</h1>
-          <p className="responsive-text" style={{
-            fontSize: "calc(0.9rem + 0.5vw)", 
-            marginBottom: "2rem"
-          }}>{slides[currentSlide].description}</p>
-          <button className="btn-2 responsive-button"
-            style={{
-              maxWidth:"200px",
-              width:"100%"
-            }}
-          >
-            Buy Now
-          </button>
-        </div>
-        <div className="image col-12 col-md-6 d-flex justify-content-center align-items-center">
-          <img
-            className="img-fluid"
-            src={slides[currentSlide].image}
-            alt={slides[currentSlide].alt}
-            style={{
-              animation: "slideIn 0.5s ease-in",
-              maxHeight: "400px",
-              objectFit: "contain"
-            }}
-          />
-        </div>
-      </div>
-      <style>
-        {`
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+    <div className="banner-container">
+      <Slider {...settings}>
+        {slides.map((slide, index) => (
+          <div key={index} className="slide">
+            <img
+              src={slide.image}
+              alt={`Slide ${index + 1}`}
+              className="slide-image"
+            />
+          </div>
+        ))}
+      </Slider>
+
+      <style jsx global>{`
+        body {
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+        }
+
+        .banner-container {
+          padding: 0 !important;
+          margin: 0 !important;
+          width: 100vw;
+          height: 90vh;
+          position: absolute;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          background: black;
+        }
+
+        .banner-container .slick-slider,
+        .banner-container .slick-list,
+        .banner-container .slick-track {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .slide {
+          height: 60vh;
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+          background: black;
+        }
+
+        .slide-image {
+          width: auto;
+          height: 100%;
+          max-width: 100%;
+          object-fit: contain;
+          display: block;
+          margin: 0;
+          padding: 0;
+        }
+
+        @media (max-width: 768px) {
+          .banner-container,
+          .slide {
+            height: 40vh;
           }
-          @keyframes slideIn {
-            from { transform: translateX(100px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-          }
-        `}
-      </style>
+        }
+      `}</style>
     </div>
   );
 };

@@ -32,7 +32,7 @@ const CategoryComp = (props) => {
       <div className="d-flex align-items-center justify-content-center py-5">
         <h1
           style={{
-            background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+            background: "linear-gradient(45deg, #001f3f, #003366)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             fontSize: "clamp(2rem, 5vw, 3rem)",
@@ -50,7 +50,7 @@ const CategoryComp = (props) => {
         </div>
       ) : (
         <Row className="g-4">
-          {dataMapped.map((category) => (
+          {dataMapped.length > 0 ? dataMapped.map((category) => (
             <Col key={category.id} xs={12} sm={6} md={4} lg={3}>
               <Card
                 className="h-100 border-0"
@@ -93,7 +93,7 @@ const CategoryComp = (props) => {
                 </div>
                 <Card.Body
                   style={{
-                    background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+                    background: "linear-gradient(45deg, #001f3f, #003366)",
                     padding: "15px",
                   }}
                 >
@@ -103,7 +103,9 @@ const CategoryComp = (props) => {
                 </Card.Body>
               </Card>
             </Col>
-          ))}
+          )) : <div className="d-flex justify-content-center align-items-center" style={{ height: "100px" }}>
+            <h1 className="text-muted">The Local Server Is Not Running</h1>
+          </div>}
         </Row>
       )}
       {props.showAll && (
@@ -112,7 +114,7 @@ const CategoryComp = (props) => {
           onClick={() => navigate("/categories")}
           style={{
             cursor: "pointer",
-            color: "#ff005a",
+            color: " #001f3f",
             transition: "all 0.3s ease",
             animation: "moveLeftRight 2s ease-in-out infinite"
           }}

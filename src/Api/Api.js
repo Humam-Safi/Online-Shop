@@ -6,14 +6,14 @@ export const USERS = `users`;
 
 export const USER = "user";
 
-export const CAT  ="categories"
-export const Cat  ="category"
+export const CAT = "categories";
+export const Cat = "category";
 
-export const PROD = "products"
-export const prod = "product"
-export const LatestSale = `latest-sale`
-export const Latest = `latest`
-export const TopRatedApi = `top-rated`
+export const PROD = "products";
+export const prod = "product";
+export const LatestSale = `latest-sale`;
+export const Latest = `latest`;
+export const TopRatedApi = `top-rated`;
 
 export const LOGOUT = `logout`;
 

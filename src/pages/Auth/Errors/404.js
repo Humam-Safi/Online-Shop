@@ -9,7 +9,7 @@ const Err404 = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(135deg, #fff5f7 0%, #fff 100%)"
+        background: "linear-gradient(135deg, #f8f9fa 0%, #fff 100%)"
       }}
     >
       <div
@@ -18,7 +18,7 @@ const Err404 = () => {
           padding: "2rem",
           borderRadius: "20px", 
           background: "white",
-          boxShadow: "0 10px 30px rgba(255, 0, 90, 0.1)",
+          boxShadow: "0 10px 30px rgba(0, 123, 255, 0.1)",
           maxWidth: "600px",
           width: "90%"
         }}
@@ -28,7 +28,7 @@ const Err404 = () => {
             fontSize: "8rem",
             fontWeight: "bold",
             margin: "0",
-            background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+            background: "linear-gradient(45deg, #001f3f, #003366)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent"
           }}
@@ -63,7 +63,7 @@ const Err404 = () => {
             display: "inline-flex",
             alignItems: "center",
             gap: "0.5rem",
-            background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+            background: "linear-gradient(45deg, #001f3f, #003366)",
             color: "white",
             padding: "0.8rem 1.5rem",
             borderRadius: "50px",
@@ -71,7 +71,7 @@ const Err404 = () => {
             fontSize: "1.1rem",
             fontWeight: "500",
             transition: "transform 0.2s ease",
-            boxShadow: "0 4px 15px rgba(255, 0, 90, 0.2)"
+            boxShadow: "0 4px 15px rgba(0, 123, 255, 0.2)"
           }}
           onMouseOver={(e) => e.currentTarget.style.transform = "translateY(-2px)"}
           onMouseOut={(e) => e.currentTarget.style.transform = "translateY(0)"}

@@ -23,19 +23,77 @@ import CategoriesPage from "./components/website/Categories/categoriesPage";
 import Category from "./components/website/Categories/Category";
 import Cart from "./components/website/Cart";
 import Favorites from "./components/website/Favorites";
+import TopBar from "./components/dashboard/TopBar";
+import Topbar from "./components/website/topBar";
+import Profile from "./components/website/User";
 
 function App() {
   return (
     <div className="app">
-      <div className="progressBar"></div>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/product/:id" element={<ProductPage />} />
-        <Route path="/categories" element={<CategoriesPage />} />
-        <Route path="/category/:id" element={<Category />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Topbar />
+              <HomePage />
+            </>
+          }
+        />
+        <Route
+          path="/product/:id"
+          element={
+            <>
+              <Topbar />
+              <ProductPage />
+            </>
+          }
+        />
+        <Route
+          path="/categories"
+          element={
+            <>
+              <Topbar />
+              <CategoriesPage />
+            </>
+          }
+        />
+        <Route
+          path="/category/:id"
+          element={
+            <>
+              <Topbar />
+              <Category />
+            </>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <>
+              <Topbar />
+              <Cart />
+            </>
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <>
+              <Topbar />
+              <Favorites />
+            </>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <>
+              <Profile />
+            </>
+          }
+        />
 
         {/* Auth Routes */}
         <Route element={<RequierBack />}>

@@ -70,12 +70,7 @@ const ProductPage = () => {
   };
 
   return (
-    <div>
-      <div className="home">
-        <div className="container">
-          <TopBar />
-        </div>
-      </div>
+    <div className="container">
       <Container className="mt-5">
         <Row className="g-4">
           <Col md={6}>
@@ -125,7 +120,7 @@ const ProductPage = () => {
                     <h2
                       className="mb-3"
                       style={{
-                        background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+                        background: "linear-gradient(45deg, #001f3f, #003366)",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                         fontWeight: "bold",
@@ -140,8 +135,7 @@ const ProductPage = () => {
                       <span
                         className="badge"
                         style={{
-                          background:
-                            "linear-gradient(45deg, #ff005a, #ff5d2d)",
+                          background: "linear-gradient(45deg, #001f3f, #003366)",
                           padding: "8px 15px",
                           borderRadius: "20px",
                           color: "white",
@@ -268,19 +262,19 @@ const ProductPage = () => {
                       onClick={() => handleAddToCart(id)}
                       className="mt-auto w-100 border-0 py-2 rounded"
                       style={{
-                        background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+                        background: "linear-gradient(45deg, #001f3f, #003366)",
                         color: "white",
                         transition: "all 0.3s ease",
                       }}
                       onMouseOver={(e) => {
                         e.target.style.transform = "scale(1.02)";
                         e.target.style.boxShadow =
-                          "0 8px 20px rgba(255, 0, 90, 0.4)";
+                          "0 8px 20px rgba(0, 31, 63, 0.4)";
                       }}
                       onMouseOut={(e) => {
                         e.target.style.transform = "scale(1)";
                         e.target.style.boxShadow =
-                          "0 5px 15px rgba(255, 0, 90, 0.3)";
+                          "0 5px 15px rgba(0, 31, 63, 0.3)";
                       }}
                     >
                       <div className="d-flex align-items-center justify-content-center gap-2">

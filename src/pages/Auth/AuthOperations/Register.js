@@ -51,7 +51,7 @@ export default function Register() {
             <Card className="shadow-lg border-0">
               <Card.Body className="p-3 p-sm-4 p-md-5">
                 <div className="text-center mb-3 mb-md-4">
-                  <h2 className="fw-bold h3 h2-md" style={{ color: "#ff005a" }}>
+                  <h2 className="fw-bold h3 h2-md" style={{ color: "#001f3f" }}>
                     Create Account
                   </h2>
                   <p className="text-muted fs-6">
@@ -117,7 +117,7 @@ export default function Register() {
                       type="submit"
                       className="btn btn-lg w-100 mb-3 mb-md-4"
                       style={{
-                        background: "#ff005a",
+                        background: "#001f3f",
                         color: "white",
                         border: "none",
                       }}
@@ -151,7 +151,7 @@ export default function Register() {
                         Already have an account?{" "}
                         <a
                           href="/login"
-                          style={{ color: "#ff005a", textDecoration: "none" }}
+                          style={{ color: "#001f3f", textDecoration: "none" }}
                           className="fw-medium"
                         >
                           Sign in

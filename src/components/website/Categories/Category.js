@@ -30,7 +30,7 @@ const Category = () => {
     if (!loading && cats.length > 0) {
       const foundCategory = cats.find((cat) => cat.id === Number(id));
       setCategory(foundCategory);
-      
+
       // Get products for this category
       Axios.get(`${PROD}`)
         .then((data) => {
@@ -46,32 +46,27 @@ const Category = () => {
   console.log(category);
 
   return (
-    <div>
-      <div className="home">
-        <div className="container">
-          <TopBar />
-        </div>
-      </div>
+    <div className="">
       <div>
-        <div className="container py-4">
-          <h2 
+        <div className=" py-4">
+          <h2
             style={{
-              background: "linear-gradient(45deg, #ff005a, #ff5d2d)",
+              background: "linear-gradient(45deg, #001f3f, #003366)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               fontSize: "2rem",
               fontWeight: "bold",
               textAlign: "center",
-              marginBottom: "2rem"
+              marginBottom: "2rem",
             }}
           >
             Category: {category?.title}
           </h2>
         </div>
-        <ProductsComp products={products} title="Related Products"/>  
+        <ProductsComp products={products} title="Related Products" />
       </div>
     </div>
-  );  
+  );
 };
 
 export default Category;

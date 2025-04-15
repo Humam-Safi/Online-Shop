@@ -12,10 +12,8 @@ const Favorites = () => {
 
   return ( 
     <div>
-    <div className="home">
       <div className="container">
-        <TopBar />
-      </div>
+ 
     </div>
     <ProductComp products={favorites} title="Favorites" />
     </div>
