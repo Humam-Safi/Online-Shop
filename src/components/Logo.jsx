@@ -49,7 +49,7 @@ const BrandText = styled.div`
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 24px;
-  color: #333;
+  color: white;
   letter-spacing: 1px;
 
   span {
@@ -58,7 +58,7 @@ const BrandText = styled.div`
 
   .tagline {
     font-size: 12px;
-    color: #666;
+    color: white;
     font-weight: 400;
     letter-spacing: 0.5px;
     margin-top: -5px;

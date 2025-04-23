@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaSearch,
   FaShoppingCart,
@@ -11,13 +11,19 @@ import {
 import Logo from "../Logo";
 import { Axios } from "../../Api/axios";
 import { CAT } from "../../Api/Api";
+import SearchContext, { SearchCont } from "../../context/SearchContext";
+import { useLocation } from "react-router-dom";
 
 const Topbar = () => {
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const [favoritesCount, setFavoritesCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
+  const { setSearch } = useContext(SearchCont);
+  setSearch(searchQuery);
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -31,13 +37,11 @@ const Topbar = () => {
       .then((data) => {
         setCategories(data.data.data);
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err));
   }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // Handle search functionality here
-    console.log("Searching for:", searchQuery);
   };
 
   return (
@@ -49,32 +53,51 @@ const Topbar = () => {
           </div>
 
           <div className={`menu ${isMenuOpen ? "open" : ""}`}>
-            <Link to="/" className="menu-item">
+            <Link
+              to="/"
+              className={`menu-item ${
+                location.pathname === "/" ? "active" : ""
+              }`}
+            >
               HOME
             </Link>
-            <Link to="/shop" className="menu-item">
-              SHOP
-            </Link>
-            <Link to="/collections" className="menu-item">
+            <Link
+              to="/collections"
+              className={`menu-item ${
+                location.pathname === "/collections" ? "active" : ""
+              }`}
+            >
               COLLECTIONS
             </Link>
-            <Link to="/about" className="menu-item">
+            <Link
+              to="/about"
+              className={`menu-item ${
+                location.pathname === "/about" ? "active" : ""
+              }`}
+            >
               ABOUT
             </Link>
-            <Link to="/contact" className="menu-item">
+            <Link
+              to="/contact"
+              className={`menu-item ${
+                location.pathname === "/contact" ? "active" : ""
+              }`}
+            >
               CONTACT
             </Link>
             <div className="mobile-icons">
               <Link to="/favorites" className="menu-item">
-                FAVORITES {favoritesCount > 0 && (
+                <FaHeart />
+                {favoritesCount > 0 && (
                   <span className="badge">{favoritesCount}</span>
                 )}
               </Link>
               <Link to="/cart" className="menu-item">
-                CART {cartCount > 0 && <span className="badge">{cartCount}</span>}
+                <FaShoppingCart />
+                {cartCount > 0 && <span className="badge">{cartCount}</span>}
               </Link>
               <Link to="/profile" className="menu-item">
-                PROFILE
+                <FaUser />
               </Link>
             </div>
           </div>
@@ -111,7 +134,11 @@ const Topbar = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="search-input"
               />
-              <button type="submit" className="search-button">
+              <button
+                type="submit"
+                onClick={() => navigate("/search")}
+                className="search-button"
+              >
                 <FaSearch />
               </button>
             </form>
@@ -119,8 +146,14 @@ const Topbar = () => {
         </div>
         <div className="categories-bar">
           <div className="categories-container">
-            {categories.map((category)=> (
-              <Link to={`/category/${category.id}`} className="category-item">{category.title}</Link>
+            {categories.map((category) => (
+              <Link
+                key={category.id}
+                to={`/category/${category.id}`}
+                className="category-item"
+              >
+                {category.title}
+              </Link>
             ))}
           </div>
         </div>
@@ -177,8 +210,17 @@ const Topbar = () => {
           transform: translateX(-50%);
         }
 
-        .menu-item:hover::after {
+        .menu-item:hover::after,
+        .menu-item.active::after {
           width: 100%;
+        }
+
+        .menu-item.active {
+          color: #febd69;
+        }
+
+        .menu-item.active::after {
+          background: #febd69;
         }
 
         .actions {

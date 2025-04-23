@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Axios } from "../../../Api/axios";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { FaCartPlus, FaStar, FaHeart } from "react-icons/fa";
 import SkeletonComp from "../Skeleton/skeleton";
 import { useNavigate } from "react-router-dom";
-import { Search } from "../../../context/SearchContext";
 
 const ProductComp = (props) => {
   const [prod, setProd] = useState([]);
@@ -16,7 +15,6 @@ const ProductComp = (props) => {
 
   const navigate = useNavigate();
 
-  const { search } = useContext(Search);
 
   useEffect(() => {
     Axios.get(`${props.api}`)
@@ -28,12 +26,7 @@ const ProductComp = (props) => {
   }, []);
   const prods = props.products || prod;
 
-  const dataMapped =
-    search.length > 0
-      ? prods.filter((product) =>
-          product.title.toLowerCase().includes(search.toLowerCase())
-        )
-      : prods;
+  const dataMapped = prods;
 
   const handleAddToCart = (id) => {
     const getCart = JSON.parse(localStorage.getItem("cart")) || [];

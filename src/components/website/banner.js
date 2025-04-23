@@ -6,13 +6,13 @@ import "slick-carousel/slick/slick-theme.css";
 const Banner = () => {
   const slides = [
     {
-      image: require("../../Assets/Images/black-background-product-photography-mini (1).jpg"),
+      image: require("../../Assets/Images/banner4.avif"),
     },
     {
-      image: require("../../Assets/Images/black-background-product-photography-mini (1).jpg"),
+      image: require("../../Assets/Images/banner2.jpg"),
     },
     {
-      image: require("../../Assets/Images/black-background-product-photography-mini (1).jpg"),
+      image: require("../../Assets/Images/banner3.jpg"),
     },
     {
       image: require("../../Assets/Images/black-background-product-photography-mini (1).jpg"),
@@ -23,11 +23,20 @@ const Banner = () => {
     dots: true,
     infinite: true,
     speed: 1000,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (

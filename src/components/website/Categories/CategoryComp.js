@@ -13,7 +13,6 @@ const CategoryComp = (props) => {
 
   const navigate = useNavigate();
 
-  const { search } = useContext(Search);
 
   useEffect(() => {
     Axios.get(`${CAT}?limit=${props.limit}`)
@@ -25,7 +24,7 @@ const CategoryComp = (props) => {
   }, []);
 
 
-  const dataMapped = search.length > 0 ? categ.filter((product) => product.title.toLowerCase().includes(search.toLowerCase())) : categ;
+  const dataMapped =  categ;
 
   return (
     <Container className="py-5">

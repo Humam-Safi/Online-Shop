@@ -14,7 +14,7 @@ const SideBar = () => {
   const [user, setUser] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useEffect(() => { 
     Axios.get(`/${USER}`)
       .then((data) => setUser(data.data))
       .catch(() => navigate("/login", { replace: true }));

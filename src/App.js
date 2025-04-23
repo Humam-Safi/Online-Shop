@@ -26,6 +26,10 @@ import Favorites from "./components/website/Favorites";
 import TopBar from "./components/dashboard/TopBar";
 import Topbar from "./components/website/topBar";
 import Profile from "./components/website/User";
+import SearchPage from "./components/website/SearchPage";
+import About from "./pages/About";
+import Collections from "./pages/Collections";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -83,6 +87,42 @@ function App() {
             <>
               <Topbar />
               <Favorites />
+            </>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <>
+              <Topbar />
+              <SearchPage />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <Topbar />
+              <About />
+            </>
+          }
+        />
+        <Route
+          path="/collections"
+          element={
+            <>
+              <Topbar />
+              <Collections />
+            </>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Topbar />
+              <Contact />
             </>
           }
         />
